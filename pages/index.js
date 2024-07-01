@@ -23,8 +23,4 @@ function Home() {
   );
 }
 
-function aleatorio() {
-  return "a";
-}
-
 export default Home;
