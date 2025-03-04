@@ -2,24 +2,63 @@ import styles from "./styles.module.css";
 
 function Home() {
   return (
-    <h1 className={styles.title}>
-      Geovana, você é o amor da minha vida! <br></br>
-      Minha vida é maravilhosa, e atribuo{" "}
-      <span className={styles.detail}>MUITO</span> disso a você.<br></br>
-      Quero casar, viver minha vida do seu lado, e te amar, muito mais a cada
-      dia.<br></br>
-      <span className={styles.detail}>
-        Minha sorte maior é ter você, ser com você, estar com você e juntos
-        sermos nós.
-      </span>
-      <br></br>
-      Escolher você todos os dias é a maior graça que alguém pode ter.<br></br>
-      Então, você nem sabe o tamanho da minha felicidade em ter sido escolhido
-      por você, para sempre te escolher<br></br>
-      Eu te amo, meu benzinho. Meu diamante rosa. Meu ouro branco. Minha paixão.
-      Amor da minha vida.<br></br>
-      <span className={styles.detail}>Hoje, aceitas casar comigo de novo?</span>
-    </h1>
+    <>
+      <div className={styles.all}>
+        <header className={styles.title}>
+          <h1 className={styles.header_title}>Página em construção</h1>
+        </header>
+        <main className={styles.main}>
+          <h1 className={styles.main_title}>Allmood</h1>
+          <p className={styles.text}>
+            Sabe aquele momento em que você quer aproveitar algum conteúdo, mas
+            passa <b className={styles.detail}>mais tempo escolhendo</b> do que{" "}
+            <b className={styles.detail}>
+              <u>realmente</u>
+            </b>{" "}
+            aproveitando? Ou quando começa um filme e percebe que{" "}
+            <b className={styles.detail}>não era</b> bem o que queria?
+          </p>
+          <p className={styles.text}>
+            O <b className={styles.detail}>Allmood</b> vem para{" "}
+            <u className={styles.detail_underline}>resolver</u> isso.
+          </p>
+          <p className={styles.text}>
+            Com base no seu humor e no que você deseja consumir, fazemos
+            recomendações <b className={styles.detail}>certeiras</b> de filmes,
+            séries e muito mais. Basta responder algumas perguntas rápidas e
+            deixar que a gente te guie para a escolha perfeita.
+          </p>
+          <p className={styles.text}>
+            Por enquanto, estamos começando com filmes e séries, mas o Allmood
+            vai muito além. Em breve, também indicaremos livros, mangás,
+            restaurantes, viagens e muito mais – tudo de acordo com o seu mood
+            do momento.
+          </p>
+          <p className={styles.text}>
+            <b className={styles.detail}>
+              🚀 Em breve, você nunca mais vai perder tempo escolhendo o que
+              assistir!
+            </b>
+          </p>
+        </main>
+        <footer className={styles.footer}>
+          <a
+            className={styles.main_button}
+            href="mailto:lucas.rodrigues.35065@gmail.com"
+            target="_blank"
+          >
+            Converse com o Dev
+          </a>
+          <a
+            className={styles.secondary_button}
+            target="_blank"
+            href="https://github.com/lucas-35065/o-que-assistir"
+          >
+            Contribua com o projeto
+          </a>
+        </footer>
+      </div>
+    </>
   );
 }
 
