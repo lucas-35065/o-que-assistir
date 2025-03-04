@@ -3,7 +3,7 @@
 
 .all {
   background-color: #121212;
-  margin: -1%;
+  margin: -8px;
   display: flex;
   flex-direction: column;
 }
