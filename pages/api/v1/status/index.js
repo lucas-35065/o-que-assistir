@@ -1,9 +1,34 @@
 import database from "infra/database.js";
 
 async function status(request, response) {
-  const result = await database.query("SELECT 1 + 1 AS Coisarada");
-  console.log(result.rows);
-  response.status(200).json({ status: "O serviço está online e operando" });
+  const updatedAt = new Date().toISOString();
+
+  const queryPostgresVersion = await database.query("SHOW server_version");
+  const postgresVersion = queryPostgresVersion.rows[0].server_version;
+
+  const queryMaxConnections = await database.query("SHOW max_connections");
+  const maxConnections = parseInt(
+    queryMaxConnections.rows[0].max_connections,
+    10,
+  );
+
+  const databaseName = process.env.POSTGRES_DB;
+  const queryActiveConnections = await database.query({
+    text: "SELECT count(*)::int FROM pg_stat_activity WHERE datname = $1;",
+    values: [databaseName],
+  });
+  const activeConnections = parseInt(queryActiveConnections.rows[0].count, 10);
+
+  response.status(200).json({
+    updated_at: updatedAt,
+    dependencies: {
+      database: {
+        postgres_version: postgresVersion,
+        max_connections: maxConnections,
+        active_connections: activeConnections,
+      },
+    },
+  });
 }
 
 export default status;
