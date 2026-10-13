@@ -17,3 +17,15 @@ Carregar as variáveis de development no jest
 precisamos importar o dotenv e fazer ele apontar pro arquivo env.development
 
 refatoração do migrations pra aglutinar as configurações em uma variável e aprimoramos o post.test pra rodar duas vezes e ser fidedigno. Ele faz uma requisição e depois outra. Assim, uma retorna uma migração pendente e a outra retorna vazio, pois já não está mais pendente.
+
+**Dia 25**
+Refatorando .env.development pra interpolar tudo na string connection usando o install do dotenv-expand
+Refatoração do migration runner pra usar um módulo em que podemos fazer a chamada com ssl, é p getNewClient que passamos a usar no index.js do migration. Também passamos a udar o dbClient
+
+**Dia 26 **
+Ambiente de homologação e branches
+
+Branch - nível 1
+
+- É uma cópia do código pra criar um código diferente
+- Bom pra experimentar coisas
